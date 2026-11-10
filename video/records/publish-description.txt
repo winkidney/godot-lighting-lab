@@ -1,0 +1,17 @@
+This audio was created with Boson AI's Higgs Audio: https://www.boson.ai/higgs-audio
+
+Godot 光照实验室：从法线到场景氛围
+
+用 Godot 4.7 (Forward+) 搭的交互式光照实验室，按 5 个模块由浅入深：法线与法线贴图、光照模型、光源与阴影、全局光照与后处理、场景氛围配方。画面全部由实验室实时渲染 (Movie Maker 逐帧输出)，场景、贴图与 LUT 均由代码生成。
+
+章节：
+00:00 片头
+00:37 01 法线与法线贴图
+02:16 02 光照模型对比
+03:54 03 光源类型与阴影
+05:26 04 GI、环境与后处理
+06:57 05 场景氛围配方
+08:11 06 调试方法
+
+配音：Higgs TTS 3 Q8_0 本地合成 (audio.cpp)，参考音色为 Kokoro zf_001 合成女声，非真人录音。
+背景音乐：《Vinyl Rhodes Study Session》，由 Suno 生成。

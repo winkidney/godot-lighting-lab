@@ -1,0 +1,19 @@
+{
+ "video_seconds": 526.066667,
+ "audio_seconds": 526.066,
+ "frames": 15782,
+ "expected_frames": 15782,
+ "av_diff_frames": 0.02,
+ "integrated_lufs": -16.1,
+ "true_peak_dbfs": -1.4,
+ "black_segments": [],
+ "chapter_boundaries": [
+  0.0,
+  37.56666666666667,
+  136.76666666666668,
+  234.1,
+  326.53333333333336,
+  417.03333333333336,
+  491.8
+ ]
+}

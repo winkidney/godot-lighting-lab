@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scripts/modules/02_lighting_models.gd" id="1_module"]
+
+[node name="LightingModels" type="Node3D"]
+script = ExtResource("1_module")

@@ -1,0 +1,850 @@
+[
+ {
+  "line": "c0s1-0",
+  "expected": "同一个小广场，只改光照参数，就能得到完全不同的氛围。",
+  "recognized": "同一个小广场,只改光照参数,就能得到完全不同的氛围。",
+  "pinyin_similarity": 1.0,
+  "latin_heard": [],
+  "raw_sha256": "0205f635970ae70576f10831c1a9e4f214045bfac68280825a453f712795dd53",
+  "flag": false
+ },
+ {
+  "line": "c0s3-0",
+  "expected": "这套实验室分成五个模块，由浅入深：",
+  "recognized": "這套實驗室分成五個模塊,有潛入身",
+  "pinyin_similarity": 1.0,
+  "latin_heard": [],
+  "raw_sha256": "4a0833cfd3c5f0d71a12debcae2d916a2d5d3869529c2c06d410acc67243ab1f",
+  "flag": false
+ },
+ {
+  "line": "c0s3-1",
+  "expected": "法线、光照模型、光源与阴影、全局光照与后处理，最后是氛围配方。",
+  "recognized": "發現光照模型、光源與陰影、全局光照與後處理最後是氛圍配方",
+  "pinyin_similarity": 1.0,
+  "latin_heard": [],
+  "raw_sha256": "299ffa4a98d3cb9095614c377d5d904862f95618f6db105a6efe57f412759bd3",
+  "flag": false
+ },
+ {
+  "line": "c0s4-0",
+  "expected": "每个模块都有参考场景、可调参数、预设和调试视图。",
+  "recognized": "每个模块都有参考场景,可调参数预设和调试试图。",
+  "pinyin_similarity": 1.0,
+  "latin_heard": [],
+  "raw_sha256": "9c989f4e0f033ddcfb940247f0600768c0c5585c68a1e4e35e908a6b3e02fdb5",
+  "flag": false
+ },
+ {
+  "line": "c0s4-1",
+  "expected": "左边点预设，右边拖参数，底部是中文说明。",
+  "recognized": "左邊點預設 右邊拖參數 底部是中文說明",
+  "pinyin_similarity": 1.0,
+  "latin_heard": [],
+  "raw_sha256": "631399b9785c0f10e641353e2629e56ba234368795cf5fb1fbf4163622cc43f4",
+  "flag": false
+ },
+ {
+  "line": "c1s1-0",
+  "expected": "光照计算的第一步，是知道表面朝向哪里，这个方向叫法线。",
+  "recognized": "光照計算的第一步是知道表面朝向哪裡這個方向叫法線",
+  "pinyin_similarity": 1.0,
+  "latin_heard": [],
+  "raw_sha256": "c4cb6050db0a6f488316a41452f93d2177854563131950775496a42f59e8b395",
+  "flag": false
+ },
+ {
+  "line": "c1s1-1",
+  "expected": "画面把法线画成了颜色：朝上偏绿，朝右偏红，朝向镜头偏蓝。",
+  "recognized": "畫面把髮線畫成了顏色朝上偏綠,朝右偏紅,朝向鏡頭偏藍",
+  "pinyin_similarity": 1.0,
+  "latin_heard": [],
+  "raw_sha256": "542bb42393bcc95d32dcf88b7b05e956c337747a784a6716edf1fcf1e14b7232",
+  "flag": false
+ },
+ {
+  "line": "c1s1-2",
+  "expected": "漫反射的亮度，基本取决于法线与光线方向的点积，N 点乘 L。",
+  "recognized": "慢反射的亮度基本取决于发现与光线方向的点击N点成L",
+  "pinyin_similarity": 1.0,
+  "latin_heard": [
+   "N",
+   "L"
+  ],
+  "raw_sha256": "c7eaa0d50deeb06a752c885456639977dfe0124d2aef4a703a773ce0b083ce4e",
+  "flag": false
+ },
+ {
+  "line": "c1s2-0",
+  "expected": "法线存在顶点上，面内的法线由三个顶点插值得到。",
+  "recognized": "法宪存在顶点,上面内的法宪由三个顶点差值得到。",
+  "pinyin_similarity": 1.0,
+  "latin_heard": [],
+  "raw_sha256": "9977e1a883a2413a395994afb8c25270139c4dee5f8582dc5f91b2ca3208e7e8",
+  "flag": false
+ },
+ {
+  "line": "c1s2-1",
+  "expected": "低模球改用面法线，就成了一块块的平直着色。",
+  "recognized": "低模球改用面法線,就成了一塊塊的平直灼色。",
+  "pinyin_similarity": 1.0,
+  "latin_heard": [],
+  "raw_sha256": "312c6a6ebb285b9f395a17b8df7308779173207e9923fd12aabe6bdd98f0df05",
+  "flag": false
+ },
+ {
+  "line": "c1s2-2",
+  "expected": "反过来，立方体被强行平均法线，侧面会出现错误的渐变。",
+  "recognized": "反過來 立方體被強行平均發現 側面會出現錯誤的見遍",
+  "pinyin_similarity": 1.0,
+  "latin_heard": [],
+  "raw_sha256": "9de27f9fa61c3a4ca8e6f05a1f1ef6c01c8d57082e1b0c4e74213eb25a1b3bb5",
+  "flag": false
+ },
+ {
+  "line": "c1s3-0",
+  "expected": "法线贴图要在表面上再扭转法线，需要一个局部坐标系，叫切线空间。",
+  "recognized": "法宪贴图要在表面上再扭转。法宪需要一个局部做标戏,叫切线空间。",
+  "pinyin_similarity": 1.0,
+  "latin_heard": [],
+  "raw_sha256": "374b39778fa26a92ddd1ca6f62e7472a38433dfeca06ea3c5ffabd516fbce655",
+  "flag": false
+ },
+ {
+  "line": "c1s3-1",
+  "expected": "红色是切线 T，绿色是副切线 B，蓝色是法线 N。",
+  "recognized": "紅色是切線T,綠色是副切線B,藍色是髮線N。",
+  "pinyin_similarity": 1.0,
+  "latin_heard": [
+   "T",
+   "B",
+   "N"
+  ],
+  "raw_sha256": "aa7bc804bf49ce8cd4eba2a34050e9170d2184e894e960081f68fd37825409d0",
+  "flag": false
+ },
+ {
+  "line": "c1s4-0",
+  "expected": "法线贴图把这个空间里的方向存成颜色，淡紫色代表不扰动。",
+  "recognized": "發現貼圖把這個空間裡的方向存成顏色淡紫色代表不擾動",
+  "pinyin_similarity": 1.0,
+  "latin_heard": [],
+  "raw_sha256": "f5bf279531ff3bad0162f67d4fb8a2142150d8adbfa509999086542311a71300",
+  "flag": false
+ },
+ {
+  "line": "c1s4-1",
+  "expected": "切回正常光照，把光压低到几乎贴着墙面，凹凸感最强。",
+  "recognized": "切回正常光照,把光壓低到幾乎貼著牆面凹凸感最強",
+  "pinyin_similarity": 0.955,
+  "latin_heard": [],
+  "raw_sha256": "131d5fca2edb783a361d3a313463b9d8869c001f85d7ccde166c03d6e1e78521",
+  "flag": false
+ },
+ {
+  "line": "c1s4-2",
+  "expected": "normal strength 越大，凹凸越深。",
+  "recognized": "Normal Strength 越大,凹凸越深。",
+  "pinyin_similarity": 1.0,
+  "latin_heard": [
+   "Normal",
+   "Strength"
+  ],
+  "raw_sha256": "a2bbfbf9e9a7d28f36347095d36069eaaee8fe01d90fe05155318ad951d9f11e",
+  "flag": false
+ },
+ {
+  "line": "c1s5-0",
+  "expected": "常见故障一：Godot 使用 Open G L 约定，绿色朝上。",
+  "recognized": "常見故障 1. 割多剃使用OpenGL流鼎 綠色潮上",
+  "pinyin_similarity": 0.786,
+  "latin_heard": [
+   "OpenGL"
+  ],
+  "raw_sha256": "de5c3dc9636bac5517c6ec427d52d5acd5cbbc5eeca6486bd4e29f434dfcc350",
+  "flag": true
+ },
+ {
+  "line": "c1s5-1",
+  "expected": "DirectX 格式的贴图绿通道相反，凸起的铆钉看起来像凹坑。",
+  "recognized": "DirectX格式的貼圖率通道,相反凸起的毛丁看起來像凹坑。",
+  "pinyin_similarity": 1.0,
+  "latin_heard": [
+   "DirectX"
+  ],
+  "raw_sha256": "94dca75650d3aace7a3dda9f89b32ee3f5d74f306dc665c3f04ced33ea8c498d",
+  "flag": false
+ },
+ {
+  "line": "c1s6-0",
+  "expected": "故障二：法线贴图被当成颜色做了 S R G B 转换，表面整体偏暗、偏向一侧。",
+  "recognized": "固杖2 法宪贴图被当成颜色做了SRG避传换表面整体偏暗 偏向一侧",
+  "pinyin_similarity": 0.923,
+  "latin_heard": [
+   "SRG"
+  ],
+  "raw_sha256": "392cf8443b24ac7731a8c9a52572abc7870682f140d2975986bd83df7cf7f1d0",
+  "flag": false
+ },
+ {
+  "line": "c1s7-0",
+  "expected": "故障三：网格缺少切线，扰动方向就全乱了。",
+  "recognized": "故障三網格,缺少切線擾動,方向就全亂了",
+  "pinyin_similarity": 1.0,
+  "latin_heard": [],
+  "raw_sha256": "3e26dd636cad0138bab07342f2e9f6755be40db9c9b2dd46867095e7368fee9a",
+  "flag": false
+ },
+ {
+  "line": "c1s7-1",
+  "expected": "导入模型时，记得生成 Mikk T Space 切线。",
+  "recognized": "導入模型時, 記得生成 MIKT Space 切線。",
+  "pinyin_similarity": 1.0,
+  "latin_heard": [
+   "MIKT",
+   "Space"
+  ],
+  "raw_sha256": "8aa304d43f2b7842699d8ac2b7334661ff3fe58c4fde6d4e7fdacc4ad61a08fa",
+  "flag": false
+ },
+ {
+  "line": "c2s1-0",
+  "expected": "这一排球从左到右是 Lambert，Half Lambert，Phong，Blinn Phong，和卡通着色，",
+  "recognized": "這一排球從左到右是 Lambert Half-Lambert 芳。Blind 芳和卡通著色。",
+  "pinyin_similarity": 0.867,
+  "latin_heard": [
+   "Lambert",
+   "Half",
+   "Lambert",
+   "Blind"
+  ],
+  "raw_sha256": "02d4bf6f37c6f1cefeae94e8541c3081cc59fca5e68f9ceb5dfe73d3bdfd7c4c",
+  "flag": false
+ },
+ {
+  "line": "c2s1-1",
+  "expected": "最右边是 Godot 内置的 P B R，作为参照。",
+  "recognized": "最右邊是割剁內置的PBR作為參照",
+  "pinyin_similarity": 0.917,
+  "latin_heard": [
+   "PBR"
+  ],
+  "raw_sha256": "6ff50b75d4cdac82275095ec5b4fc558d83c185befd2ea1f4eade8c0f9a357a6",
+  "flag": false
+ },
+ {
+  "line": "c2s2-0",
+  "expected": "先只看 N 点乘 L：正对光源为一，侧面逐渐变暗，背面被截成零。",
+  "recognized": "先只看N点成L正对光源为一, 侧面逐渐变暗,背面被结成0。",
+  "pinyin_similarity": 0.978,
+  "latin_heard": [
+   "N",
+   "L"
+  ],
+  "raw_sha256": "fdbb746ecafe0d13729d79cae37a8019b1d5519e734eee7fad45779c14603c3a",
+  "flag": false
+ },
+ {
+  "line": "c2s2-1",
+  "expected": "Half Lambert 把它重新映射到零到一，背光面也保留了层次。",
+  "recognized": "Half Lambert把他重新映射到0-1,被光面也保留了層次。",
+  "pinyin_similarity": 0.914,
+  "latin_heard": [
+   "Half",
+   "Lambert"
+  ],
+  "raw_sha256": "35321996a051b12b41a3904c0b03312a84cb28e441d6963b857cc9e0ca37ab0d",
+  "flag": false
+ },
+ {
+  "line": "c2s3-0",
+  "expected": "高光才是这些模型真正的区别。",
+  "recognized": "高光才是這些模型真正的區別",
+  "pinyin_similarity": 1.0,
+  "latin_heard": [],
+  "raw_sha256": "4f84386ef6e535e9adbfcfc4d44bd8a0f1f4e012aeab7b16a25bf5cdcf30f97c",
+  "flag": false
+ },
+ {
+  "line": "c2s3-1",
+  "expected": "Phong 比较反射向量 R 与视线 V，Blinn Phong 比较法线 N 与半程向量 H。",
+  "recognized": "方比較反射向量R與視線V。Blin方比較發現N與半成向量H。",
+  "pinyin_similarity": 0.947,
+  "latin_heard": [
+   "R",
+   "V",
+   "Blin",
+   "N",
+   "H"
+  ],
+  "raw_sha256": "e14cc3c33c2a30713841e7e95936082e4d98e139060294c8cefaf75e4e1ff95e",
+  "flag": false
+ },
+ {
+  "line": "c2s3-2",
+  "expected": "同样的指数下，Blinn Phong 的高光更大、更圆。",
+  "recognized": "同樣的指數下,邊方的高光更大、更遠。",
+  "pinyin_similarity": 0.929,
+  "latin_heard": [],
+  "raw_sha256": "6b706ecedf1e028d671676b1315bdd574f0e83405e53f0f749900b8745545b34",
+  "flag": false
+ },
+ {
+  "line": "c2s4-0",
+  "expected": "看这五根箭头：N 蓝色，L 黄色，V 白色，H 品红，R 青色。",
+  "recognized": "看这五根箭头,N柴色、L领色、V白色、H笨红、R青色。",
+  "pinyin_similarity": 0.812,
+  "latin_heard": [
+   "N",
+   "L",
+   "V",
+   "H",
+   "R"
+  ],
+  "raw_sha256": "72bdcf59a78173498a9cbf5af8c3767a6dc9c7931e21ad551adeaeccd3b42fe8",
+  "flag": false
+ },
+ {
+  "line": "c2s4-1",
+  "expected": "H 位于 L 和 V 正中间，当 N 与 H 重合时，高光最亮。",
+  "recognized": "H位於L和V正中間, 當N與H重合時,高光最亮。",
+  "pinyin_similarity": 1.0,
+  "latin_heard": [
+   "H",
+   "L",
+   "V",
+   "N",
+   "H"
+  ],
+  "raw_sha256": "a90f399ac3a89b8d042adf72f8bdab24fb0a0b56767db7c7b10d9155765de82b",
+  "flag": false
+ },
+ {
+  "line": "c2s5-0",
+  "expected": "高光指数越大，高光越小越锐利，表面显得越光滑。",
+  "recognized": "高光指数越大,高光越小,越銳利,表面显得越光滑。",
+  "pinyin_similarity": 1.0,
+  "latin_heard": [],
+  "raw_sha256": "8601b2cf62e94c6032d1814681aba555cd22d9e75c4a4438cb7aab081c337505",
+  "flag": false
+ },
+ {
+  "line": "c2s5-1",
+  "expected": "再打开能量守恒，越集中的高光峰值越亮，这更接近真实。",
+  "recognized": "再打开能量守恒月集中的高光峰值月亮这更接近真实",
+  "pinyin_similarity": 1.0,
+  "latin_heard": [],
+  "raw_sha256": "f35c02163a2c542ced9cf6b2f4c0f1598feb8bd549ed50754a302836ed405bb6",
+  "flag": false
+ },
+ {
+  "line": "c2s6-0",
+  "expected": "把 N 点乘 L 量化成两个色阶，高光用阈值硬切，",
+  "recognized": "把N 點成L 亮化成兩個色階, 高光用預值硬切。",
+  "pinyin_similarity": 1.0,
+  "latin_heard": [
+   "N",
+   "L"
+  ],
+  "raw_sha256": "93199c2a84ecc1e298c275e8f45bfac11de7fb8a168be88e94dc3c620f6d0a56",
+  "flag": false
+ },
+ {
+  "line": "c2s6-1",
+  "expected": "再加一圈边缘光，就是最基础的卡通渲染。",
+  "recognized": "再加一圈邊緣光,就是最基礎的卡通渲染。",
+  "pinyin_similarity": 1.0,
+  "latin_heard": [],
+  "raw_sha256": "edf24757759154b78a7affaca69a2a8ef520d0a10e64461d9762187ef0036b7e",
+  "flag": false
+ },
+ {
+  "line": "c2s7-0",
+  "expected": "P B R 只用粗糙度和金属度两个参数来描述材质。",
+  "recognized": "PBR只用粗糙度和金屬度兩個參數 來描述材質",
+  "pinyin_similarity": 1.0,
+  "latin_heard": [
+   "PBR"
+  ],
+  "raw_sha256": "5a7f2440ca32190c78f6946b4c137398d78f04e3a31b2a21e27a3d6c84be3e4e",
+  "flag": false
+ },
+ {
+  "line": "c2s7-1",
+  "expected": "横向是粗糙度从零到一，纵向是金属度从下到上。",
+  "recognized": "橫向是粗糙度從0到1,縱向是金屬度從下到上",
+  "pinyin_similarity": 0.947,
+  "latin_heard": [],
+  "raw_sha256": "b9f83b51c86f79ea2d6a0c6dc367ae1dda04a54046c0493be53e9062b31229d8",
+  "flag": false
+ },
+ {
+  "line": "c2s7-2",
+  "expected": "金属没有漫反射，颜色全部来自反射；越粗糙，高光越宽越暗。",
+  "recognized": "金屬沒有慢反射,顏色全部來自反射,越粗糙,高光越寬越暗。",
+  "pinyin_similarity": 1.0,
+  "latin_heard": [],
+  "raw_sha256": "e0a96062104b965897e27bd34bbd4ca364fe75c7eec3ecb4f9023144349b79bb",
+  "flag": false
+ },
+ {
+  "line": "c3s1-0",
+  "expected": "平行光模拟太阳：只有方向没有位置，所有阴影朝向一致。",
+  "recognized": "平行光模擬太陽 只有方向沒有位置 所有陰影朝向一致",
+  "pinyin_similarity": 1.0,
+  "latin_heard": [],
+  "raw_sha256": "533918e39ac312e8cfe7951d8b3b5432dd847fd4197671f5d280ca5afae74c2a",
+  "flag": false
+ },
+ {
+  "line": "c3s2-0",
+  "expected": "点光从一个点向四周发光，亮度随距离衰减。",
+  "recognized": "點光從一個點向四周發光,亮度隨距離衰減。",
+  "pinyin_similarity": 1.0,
+  "latin_heard": [],
+  "raw_sha256": "54241bf8f953c3a70c291bc3d25d30c88d2a4f94ba0dee30422335cc4d89953d",
+  "flag": false
+ },
+ {
+  "line": "c3s3-0",
+  "expected": "聚光是一个光锥，还能用投影纹理投出窗框的图案。",
+  "recognized": "聚光是一個光追,還能用投影文裡投出窗框的圖案。",
+  "pinyin_similarity": 1.0,
+  "latin_heard": [],
+  "raw_sha256": "b39b0e698d20de6ff58f03ef2710aaf1a089fa070bad9acf60aea7b37b01f078",
+  "flag": false
+ },
+ {
+  "line": "c3s4-0",
+  "expected": "Godot 四点七新增了面光源：光从一整块矩形发出，阴影边缘更柔和。",
+  "recognized": "割多4.7,新增了面光源,光從一整塊舉行發出,陰影邊緣更柔和。",
+  "pinyin_similarity": 0.898,
+  "latin_heard": [],
+  "raw_sha256": "939215ecf007821a1f4c0ae9d9f88d0989084c9b66c7b0fbb9f9cac757736317",
+  "flag": false
+ },
+ {
+  "line": "c3s5-0",
+  "expected": "实时阴影靠阴影贴图：先从光源方向渲染一张深度图，",
+  "recognized": "实时阴影靠阴影贴图。先从光源方向渲染一张深度图。",
+  "pinyin_similarity": 1.0,
+  "latin_heard": [],
+  "raw_sha256": "49f55f809585ffe4fa7445d061259eff5b5ebc29b727202ce452b4302a076c6d",
+  "flag": false
+ },
+ {
+  "line": "c3s5-1",
+  "expected": "着色时比较像素到光源的距离，更远的就在阴影里。",
+  "recognized": "著色時比較像素 到光源的距離更遠的就在陰影裡",
+  "pinyin_similarity": 0.952,
+  "latin_heard": [],
+  "raw_sha256": "86218be522112e3f6e4bbf4f00f711e541612741d232339ba4872d1a7bbd1c83",
+  "flag": false
+ },
+ {
+  "line": "c3s6-0",
+  "expected": "深度比较有精度误差。把偏移 bias 设为零，",
+  "recognized": "深度比較,有精度誤差,把偏移BS設為0。",
+  "pinyin_similarity": 0.966,
+  "latin_heard": [
+   "BS"
+  ],
+  "raw_sha256": "8ee2fc6c531da9ce4be7bcec6904af4dec8cb0a8ea24bcd59929be194ae9b5b3",
+  "flag": false
+ },
+ {
+  "line": "c3s6-1",
+  "expected": "表面会和自己的阴影打架，出现条纹，这叫阴影痤疮。",
+  "recognized": "表面會和自己的陰影打架,出現條文,這叫陰影磋窗",
+  "pinyin_similarity": 1.0,
+  "latin_heard": [],
+  "raw_sha256": "dc1c0ac2c0fc08419e5530a7a92643b59529f97b84aad72799bf60232c199893",
+  "flag": false
+ },
+ {
+  "line": "c3s6-2",
+  "expected": "慢慢加大 normal bias，条纹就消失了。",
+  "recognized": "慢慢加打Normal Bias条文就消失了。",
+  "pinyin_similarity": 1.0,
+  "latin_heard": [
+   "Normal",
+   "Bias"
+  ],
+  "raw_sha256": "7294e4d4dbc8fd66e059dd12e031ad2b27153c6dcca01f8c059592109c015a45",
+  "flag": false
+ },
+ {
+  "line": "c3s7-0",
+  "expected": "但偏移过大，阴影会和物体脱开，像浮在地面上，这叫 Peter Panning。",
+  "recognized": "但偏移过大,阴影会和物体脱开,向浮在地面上。这叫Peter Penning。",
+  "pinyin_similarity": 1.0,
+  "latin_heard": [
+   "Peter",
+   "Penning"
+  ],
+  "raw_sha256": "b8aa6f65fa79d889738daf541ff13f8482b194d5d8c8eacdc59fa7a57af8cbef",
+  "flag": false
+ },
+ {
+  "line": "c3s7-1",
+  "expected": "所以偏移够用就好：先调 normal bias，再微调 bias。",
+  "recognized": "所以偏移够用就好。先调Normal Bias再微调Bias。",
+  "pinyin_similarity": 1.0,
+  "latin_heard": [
+   "Normal",
+   "Bias",
+   "Bias"
+  ],
+  "raw_sha256": "01e192a9b224d19cb4e40d07ab24b0df71349f2cfb19f80a2ef24e26c609160c",
+  "flag": false
+ },
+ {
+  "line": "c3s8-0",
+  "expected": "平行光要覆盖很远的范围，所以把视锥切成几段，每段一张阴影图。",
+  "recognized": "平行光要覆蓋很遠的範圍,所以把視錐切成幾段,每段一張陰影圖。",
+  "pinyin_similarity": 1.0,
+  "latin_heard": [],
+  "raw_sha256": "a4963b7314b33680aa76d0006bf095361e2fe7f9c0f9e5492ff915e0baad2d29",
+  "flag": false
+ },
+ {
+  "line": "c3s8-1",
+  "expected": "这就是级联阴影 P S S M：近处精度高，远处精度低。",
+  "recognized": "這就是極廉陰影、PSSM、近處精度高、遠處精度低。",
+  "pinyin_similarity": 1.0,
+  "latin_heard": [
+   "PSSM"
+  ],
+  "raw_sha256": "877f51895b52c62c548aa86e04f6bbea9913105b580ca10c64f558ae97d880b3",
+  "flag": false
+ },
+ {
+  "line": "c3s9-0",
+  "expected": "最后是软阴影。给光源一个角直径，离遮挡物越远，阴影越模糊。",
+  "recognized": "最後是軟陰影,給光源一個角,直徑離遮擋物越遠,陰影越模糊",
+  "pinyin_similarity": 1.0,
+  "latin_heard": [],
+  "raw_sha256": "cda167cfcd663945e7543bc71f33e779480eca562c41cf18baf393e36b0f2472",
+  "flag": false
+ },
+ {
+  "line": "c3s9-1",
+  "expected": "这叫接触硬化，是 P C S S 软阴影的特点。",
+  "recognized": "这叫接触印画,是PCSS拢阴影的特点。",
+  "pinyin_similarity": 0.846,
+  "latin_heard": [
+   "PCSS"
+  ],
+  "raw_sha256": "40611bd3df450403fac5a39cd7721e83b8a6e44096e61ab55a503105f1ed0622",
+  "flag": false
+ },
+ {
+  "line": "c4s1-0",
+  "expected": "关掉环境光和全局光照，只有阳光直接照到的地方是亮的。",
+  "recognized": "關掉環境光和全局光照,只有陽光直接照到的地方是亮的。",
+  "pinyin_similarity": 1.0,
+  "latin_heard": [],
+  "raw_sha256": "d26f4f048a3e2897a8b973f49005a2ab9ff0adaee7054e1a8f2a94d8bbd19980",
+  "flag": false
+ },
+ {
+  "line": "c4s1-1",
+  "expected": "现实中，光会在墙面之间反复反弹，这就是全局光照 G I。",
+  "recognized": "現實中 光會在牆面之間反覆反彈這就是全局光照之愛",
+  "pinyin_similarity": 0.909,
+  "latin_heard": [],
+  "raw_sha256": "145e5484108b32faa7eafb130caa60dea011ecd77722af8311294058795c145d",
+  "flag": false
+ },
+ {
+  "line": "c4s2-0",
+  "expected": "打开 S D F G I，阳光照亮了整个房间，红墙和绿墙还把颜色染到了地面上。",
+  "recognized": "打開SDFGI陽光照亮了整個房間,紅牆和綠牆還把顏色染到了地面上。",
+  "pinyin_similarity": 1.0,
+  "latin_heard": [
+   "SDFGI"
+  ],
+  "raw_sha256": "1ac5c8f42ba36126b4b5a68e9d3a543734b592907e7d4a160ebc0524196c723d",
+  "flag": false
+ },
+ {
+  "line": "c4s2-1",
+  "expected": "切到 G I Buffer 视图，就能单独查看间接光的贡献。",
+  "recognized": "切到 GI Buffer 中途,就能单独查看间接光的贡献。",
+  "pinyin_similarity": 0.938,
+  "latin_heard": [
+   "GI",
+   "Buffer"
+  ],
+  "raw_sha256": "69e9fc3e8a8edd6ede13b74e74b99919ea419aada2bc4de313e051130bcaf27a",
+  "flag": false
+ },
+ {
+  "line": "c4s3-0",
+  "expected": "屏幕空间效果比较便宜：S S A O 让墙角和接触处变暗，",
+  "recognized": "屏幕空间效果比较便宜。SSAO 让墙角和接触处变暗。",
+  "pinyin_similarity": 1.0,
+  "latin_heard": [
+   "SSAO"
+  ],
+  "raw_sha256": "049eea55738cf67329f9d8bb4b65593e743a001bea27627023719f00aff5f9fc",
+  "flag": false
+ },
+ {
+  "line": "c4s3-1",
+  "expected": "S S R 让光滑地板映出房间，但只能反射屏幕上看得见的东西。",
+  "recognized": "SSR讓光滑地板印出房間但只能反射屏幕上看得見的東西",
+  "pinyin_similarity": 0.957,
+  "latin_heard": [
+   "SSR"
+  ],
+  "raw_sha256": "ebb6e05bc2f3581209c3c2c3c7003ad25ad3fe375573bc7a3e5ca6db8de5ff36",
+  "flag": false
+ },
+ {
+  "line": "c4s4-0",
+  "expected": "光照在 HDR 中计算，亮度可以远大于一，屏幕却只能显示零到一。",
+  "recognized": "光照在HDR中計算亮度,可以遠大於1,屏幕卻只能顯示0-1。",
+  "pinyin_similarity": 0.909,
+  "latin_heard": [
+   "HDR"
+  ],
+  "raw_sha256": "c0fd10d93161374b4cbbabe244f43456b9a5d97b5e6c077befb4e045c4361807",
+  "flag": false
+ },
+ {
+  "line": "c4s4-1",
+  "expected": "Linear 直接截断，窗口和发光球变成了一片死白；",
+  "recognized": "Linear直接截斷窗口和發光球變成了一片死白。",
+  "pinyin_similarity": 1.0,
+  "latin_heard": [
+   "Linear"
+  ],
+  "raw_sha256": "abbccf797b2ef58f6d6c92eaa0f8b4ea4bef6ddd1d91607d2d1c62630a1191a3",
+  "flag": false
+ },
+ {
+  "line": "c4s4-2",
+  "expected": "换成 A G X 色调映射，高光被平滑压缩，自然地过渡到白色。",
+  "recognized": "換成 AGX 色調映射, 高光被平滑壓縮, 自然地過度到白色。",
+  "pinyin_similarity": 1.0,
+  "latin_heard": [
+   "AGX"
+  ],
+  "raw_sha256": "731d8ba41a8c0c1b7853d84cbb48e7e55bbb6fab06284d5143708a349de93648",
+  "flag": false
+ },
+ {
+  "line": "c4s5-0",
+  "expected": "辉光主要作用于超过阈值的高亮像素，把它们模糊后叠加回去。",
+  "recognized": "灰光主要作用於超過預值的高亮像素,把它們模糊後疊加回去",
+  "pinyin_similarity": 1.0,
+  "latin_heard": [],
+  "raw_sha256": "f1e577907f443e9dcbf85c2055bb81777bb9642c7e73fcd575a7e759df2bdfd4",
+  "flag": false
+ },
+ {
+  "line": "c4s6-0",
+  "expected": "体积雾在空间里计算光的散射，阳光穿过窗户，形成了光柱。",
+  "recognized": "體積物在空間裡計算光的散射陽光穿過窗戶形成了光柱",
+  "pinyin_similarity": 1.0,
+  "latin_heard": [],
+  "raw_sha256": "5814e39431e3f7e296c38fd47b2bfe6005a770be61586bd27631ee4c8c778826",
+  "flag": false
+ },
+ {
+  "line": "c4s7-0",
+  "expected": "调色发生在色调映射之后：这张三维查找表让暗部偏青、亮部偏橙。",
+  "recognized": "调色发生在色调映射之后。这张三维茶找表让暗部偏轻、亮部偏橙。",
+  "pinyin_similarity": 1.0,
+  "latin_heard": [],
+  "raw_sha256": "9d70192315ee6e1138b4f825b939d7ffec42bbc76ad4c1cece3db16588f6f554",
+  "flag": false
+ },
+ {
+  "line": "c4s8-0",
+  "expected": "效果全开以后，记得看 GPU 耗时，再逐个关闭，找出最贵的那一项。",
+  "recognized": "效果全開以後,記得看GPU之時再逐個關閉,找出最貴的那一項。",
+  "pinyin_similarity": 0.958,
+  "latin_heard": [
+   "GPU"
+  ],
+  "raw_sha256": "c8a3fd62395a7436e22bd4839a002a87f73acf6b2d8d06707a09ad144a977bee",
+  "flag": false
+ },
+ {
+  "line": "c5s1-0",
+  "expected": "氛围不是某一个参数，而是好几层光的组合。",
+  "recognized": "分为不是某一个参数,而是好几层光的组合。",
+  "pinyin_similarity": 1.0,
+  "latin_heard": [],
+  "raw_sha256": "dcec23606602aa0e3c428fb6d641c5a3beca51a7a143db827d2acb3db86e97ed",
+  "flag": false
+ },
+ {
+  "line": "c5s1-1",
+  "expected": "以黄金时刻为例：低角度的暖色主光，加上冷蓝色的天空补光。",
+  "recognized": "以黃金時刻為例,低角度的暖色主光加上冷藍色的天空補光。",
+  "pinyin_similarity": 1.0,
+  "latin_heard": [],
+  "raw_sha256": "1def0a6bc0014ac418c4336f7b40774b71c38ddef6ad05f659ce57234026db91",
+  "flag": false
+ },
+ {
+  "line": "c5s1-2",
+  "expected": "主光决定方向和时间，补光决定暗部的颜色。",
+  "recognized": "主光決定方向和時間,曝光決定按部的顏色",
+  "pinyin_similarity": 0.944,
+  "latin_heard": [],
+  "raw_sha256": "0de49a2bf98faa2febca4a2e4a950d5287b97a8104d4c40b5f3376031ded7273",
+  "flag": false
+ },
+ {
+  "line": "c5s2-0",
+  "expected": "现在一层一层关掉。先关主光，画面立刻失去了方向和时间感。",
+  "recognized": "現在一層一層關掉,先關主光,畫面立刻失去了方向和時間感。",
+  "pinyin_similarity": 1.0,
+  "latin_heard": [],
+  "raw_sha256": "8f1092e66f7011c08d017c5fd2a0aca21e1c8ba60d6c38e5f89e650dab7c4f7a",
+  "flag": false
+ },
+ {
+  "line": "c5s2-1",
+  "expected": "再关天空环境光，暗部直接发黑。",
+  "recognized": "再關天空環境 光暗部直接發黑",
+  "pinyin_similarity": 1.0,
+  "latin_heard": [],
+  "raw_sha256": "0b6b6a25e1e3a9e45987abba309b7ac2e6716515bd1148856cbc3186ce35d3d7",
+  "flag": false
+ },
+ {
+  "line": "c5s2-2",
+  "expected": "关掉雾和体积雾，纵深感消失；关掉后处理，画面变得平淡。",
+  "recognized": "關掉物和體積,物縱深感消失。關掉後處理,畫面變得平淡。",
+  "pinyin_similarity": 1.0,
+  "latin_heard": [],
+  "raw_sha256": "e8bb45e892c764fe57d19332beb9ebb6261049a4b3ad82234bb9036fd30007e2",
+  "flag": false
+ },
+ {
+  "line": "c5s2-3",
+  "expected": "全部打开，每一层的贡献就一目了然。",
+  "recognized": "全部打開,每一層的貢獻就一目了然。",
+  "pinyin_similarity": 1.0,
+  "latin_heard": [],
+  "raw_sha256": "26e59c272ae42e6415593098cc6ed58c6e7aba193cb775ae0c785751b4746515",
+  "flag": false
+ },
+ {
+  "line": "c5s3-0",
+  "expected": "配方之间可以插值，比如从正午平滑过渡到黄金时刻。",
+  "recognized": "配方之間可以插指,比如從正午平滑過渡到黃金時刻。",
+  "pinyin_similarity": 1.0,
+  "latin_heard": [],
+  "raw_sha256": "d8f84b7f91b7531f08e9b7727d0e33baf62ea785a3b729f3e9c130b3bee8000d",
+  "flag": false
+ },
+ {
+  "line": "c5s3-1",
+  "expected": "time of day 则驱动整个昼夜循环：太阳落下，路灯亮起。",
+  "recognized": "Time of Day 則驅動整個晝夜循環。太陽落下,路燈亮起。",
+  "pinyin_similarity": 1.0,
+  "latin_heard": [
+   "Time",
+   "of",
+   "Day"
+  ],
+  "raw_sha256": "3bcaf0267e072cb7a45b49ce960eb4345d619112a2ab698712458d16008e189c",
+  "flag": false
+ },
+ {
+  "line": "c5s4-0",
+  "expected": "霓虹雨夜：冷色的环境，加上饱和的霓虹灯和湿地面的反射。",
+  "recognized": "霓虹雨夜、冷色的环境加上饱和的霓虹灯和湿地面的反射。",
+  "pinyin_similarity": 1.0,
+  "latin_heard": [],
+  "raw_sha256": "ef1ba18e90619229b0f7df9a60c9d94d297b1a126870bc443965902993678e59",
+  "flag": false
+ },
+ {
+  "line": "c5s5-0",
+  "expected": "丁达尔光：阳光穿过藤架的缝隙，体积雾让光束有了形状。",
+  "recognized": "叮打耳光,陽光穿過藤架的縫隙,體積物讓光束有了形狀",
+  "pinyin_similarity": 1.0,
+  "latin_heard": [],
+  "raw_sha256": "da262b76c1a526725ca6797285ab3951c210ee338e7f38ba099eae5dc0ca4a12",
+  "flag": false
+ },
+ {
+  "line": "c5s6-0",
+  "expected": "恐怖氛围则是做减法：信息越少越好，灯光不稳定，再压暗四周。",
+  "recognized": "恐怖氛圍則是做減法信息越少越好燈光不穩定再壓按四周",
+  "pinyin_similarity": 1.0,
+  "latin_heard": [],
+  "raw_sha256": "b80dcaba3d86322ba5efd97a5d79c5b3ea3039a75411345fcfaccf5bf8dc7239",
+  "flag": false
+ },
+ {
+  "line": "c6s1-0",
+  "expected": "最后总结调试光照的四个习惯。",
+  "recognized": "最後總結調適光照的四個習慣",
+  "pinyin_similarity": 0.923,
+  "latin_heard": [],
+  "raw_sha256": "c23e3497512c318abe64b95082d25661827dd0634185c96dfccb22d7a48ab6c0",
+  "flag": false
+ },
+ {
+  "line": "c6s1-1",
+  "expected": "第一，用 Debug View 只看一层，先确认问题出在哪里。",
+  "recognized": "第一,用Debug View指看一層,先確認問題出在哪裡",
+  "pinyin_similarity": 1.0,
+  "latin_heard": [
+   "Debug",
+   "View"
+  ],
+  "raw_sha256": "26fe10a0b33da1397e85e2b6580bc3b3e943f0196b5ead4910648f4fad291f45",
+  "flag": false
+ },
+ {
+  "line": "c6s1-2",
+  "expected": "第二，改参数前后存 A B 两个快照，按 Tab 来回对比。",
+  "recognized": "第二,改参数前后,存A、B两个快照,按Type来回对比。",
+  "pinyin_similarity": 1.0,
+  "latin_heard": [
+   "A",
+   "B",
+   "Type"
+  ],
+  "raw_sha256": "6a38605d87b8ba2b7065a1688ffe993b4a4ce223f84e4d1e6463c00fcf44c73d",
+  "flag": false
+ },
+ {
+  "line": "c6s1-3",
+  "expected": "第三，盯住左上角的 GPU 耗时；第四，把调好的参数导出成笔记。",
+  "recognized": "第三,盯住左上角的 GPU 之時。第四,把調好的參數導出成筆記。",
+  "pinyin_similarity": 0.957,
+  "latin_heard": [
+   "GPU"
+  ],
+  "raw_sha256": "e638bb1da14f11e4dee2333846452c767216dcabf5945bb3e500b2ba551c3797",
+  "flag": false
+ },
+ {
+  "line": "c6s2-0",
+  "expected": "所有参数、预设和文档都在项目里，打开就能自己动手试。",
+  "recognized": "所有參數預設和文檔都在項目裡,打開就能自己動手勢。",
+  "pinyin_similarity": 1.0,
+  "latin_heard": [],
+  "raw_sha256": "020cf9488cde597920078e23a7518a35698268e9a6f66f302b68cf70f933b6a8",
+  "flag": false
+ },
+ {
+  "line": "c6s2-1",
+  "expected": "感谢观看。",
+  "recognized": "感謝觀看",
+  "pinyin_similarity": 1.0,
+  "latin_heard": [],
+  "raw_sha256": "8c960a7e933d888af3b31d91e3fc2d96d1cbcc2d3bd4ab85109f3ed438e33ca4",
+  "flag": false
+ }
+]

@@ -1,0 +1,1478 @@
+{
+  "title": "Godot 光照实验室：从法线到场景氛围",
+  "fps": 30,
+  "size": [
+    1920,
+    1080
+  ],
+  "timing": {
+    "card": 2.6,
+    "pre": 0.4,
+    "gap": 0.25,
+    "post": 0.6
+  },
+  "voice": {
+    "workflow": "audio.tts",
+    "model": "higgs-tts-3-q8_0",
+    "mode": "clone",
+    "reference": "Kokoro-82M-v1.1-zh zf_001 synthetic reference bundled with Asset Workbench (15.05 s)",
+    "seed": 20261102,
+    "text_chunk_size": 40
+  },
+  "chapters": [
+    {
+      "id": "c0",
+      "module": 4,
+      "short": "片头",
+      "card": {
+        "num": "",
+        "title": "Godot 光照实验室",
+        "subtitle": "法线 · 光照模型 · 阴影 · 全局光照 · 场景氛围"
+      },
+      "shots": [
+        {
+          "id": "c0s1",
+          "label": "同一场景，不同氛围",
+          "preset": "② 黄金时刻",
+          "camera": "广场全景",
+          "orbit": 2.0,
+          "lines": [
+            {
+              "sub": "同一个小广场，只改光照参数，就能得到完全不同的氛围。"
+            }
+          ],
+          "post": 0.6
+        },
+        {
+          "id": "c0s2",
+          "label": "配方速览",
+          "hold": 6.6,
+          "orbit": 1.5,
+          "lines": [],
+          "actions": [
+            {
+              "at": 0,
+              "do": "preset",
+              "name": "⑥ 霓虹雨夜"
+            },
+            {
+              "at": 0,
+              "do": "camera",
+              "bookmark": "湿地面倒影"
+            },
+            {
+              "at": 0,
+              "do": "card",
+              "title": "霓虹雨夜",
+              "dur": 2.0
+            },
+            {
+              "at": 2.2,
+              "do": "preset",
+              "name": "⑤ 雾林丁达尔光"
+            },
+            {
+              "at": 2.2,
+              "do": "camera",
+              "bookmark": "藤架光柱"
+            },
+            {
+              "at": 2.2,
+              "do": "card",
+              "title": "林间光柱",
+              "dur": 2.0
+            },
+            {
+              "at": 4.4,
+              "do": "preset",
+              "name": "④ 月夜"
+            },
+            {
+              "at": 4.4,
+              "do": "camera",
+              "bookmark": "广场全景"
+            },
+            {
+              "at": 4.4,
+              "do": "card",
+              "title": "月夜",
+              "dur": 2.0
+            }
+          ]
+        },
+        {
+          "id": "c0s3",
+          "label": "学习路线",
+          "preset": "① 晴朗正午",
+          "camera": "广场全景",
+          "orbit": 1.5,
+          "lines": [
+            {
+              "sub": "这套实验室分成五个模块，由浅入深："
+            },
+            {
+              "sub": "法线、光照模型、光源与阴影、全局光照与后处理，最后是氛围配方。"
+            }
+          ],
+          "actions": [
+            {
+              "at": "L0",
+              "do": "card",
+              "title": "学习路线",
+              "body": "01  法线与法线贴图\n02  光照模型对比\n03  光源类型与阴影\n04  GI、环境与后处理\n05  场景氛围配方"
+            }
+          ]
+        },
+        {
+          "id": "c0s4",
+          "label": "实验室界面",
+          "sub_top": true,
+          "lines": [
+            {
+              "sub": "每个模块都有参考场景、可调参数、预设和调试视图。"
+            },
+            {
+              "sub": "左边点预设，右边拖参数，底部是中文说明。"
+            }
+          ],
+          "actions": [
+            {
+              "at": 0,
+              "do": "ui",
+              "on": true
+            },
+            {
+              "at": "L1+0.6",
+              "do": "preset",
+              "name": "② 黄金时刻",
+              "shell": true
+            }
+          ],
+          "post": 1.0
+        }
+      ]
+    },
+    {
+      "id": "c1",
+      "module": 0,
+      "short": "法线",
+      "card": {
+        "num": "01",
+        "title": "法线与法线贴图",
+        "subtitle": "光照的起点：表面朝向哪里"
+      },
+      "shots": [
+        {
+          "id": "c1s1",
+          "label": "法线 N 与 N·L",
+          "preset": "① 世界空间法线",
+          "camera": {
+            "target": [
+              0.6,
+              1.0,
+              -0.6
+            ],
+            "yaw": 0,
+            "pitch": -12,
+            "distance": 11.0
+          },
+          "orbit": 1.5,
+          "lines": [
+            {
+              "sub": "光照计算的第一步，是知道表面朝向哪里，这个方向叫法线。"
+            },
+            {
+              "sub": "画面把法线画成了颜色：朝上偏绿，朝右偏红，朝向镜头偏蓝。"
+            },
+            {
+              "sub": "漫反射的亮度，基本取决于法线与光线方向的点积 N·L。",
+              "say": "漫反射的亮度，基本取决于法线与光线方向的点积，N 点乘 L。"
+            }
+          ],
+          "actions": [
+            {
+              "at": "L2",
+              "do": "card",
+              "title": "N·L",
+              "body": "diffuse ≈ max(N·L, 0)\n正对光源 = 1 · 垂直 = 0 · 背面截为 0"
+            },
+            {
+              "at": "L2+1.2",
+              "do": "set",
+              "key": "view.mode",
+              "value": "N·L"
+            },
+            {
+              "at": "L2+1.2",
+              "do": "hud",
+              "keys": [
+                "view.mode"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "c1s2",
+          "label": "平直 vs 平滑着色",
+          "preset": "",
+          "camera": "低模/硬边",
+          "lines": [
+            {
+              "sub": "法线存在顶点上，面内的法线由三个顶点插值得到。"
+            },
+            {
+              "sub": "低模球改用面法线，就成了一块块的平直着色。"
+            },
+            {
+              "sub": "反过来，立方体被强行平均法线，侧面会出现错误的渐变。"
+            }
+          ],
+          "actions": [
+            {
+              "at": 0,
+              "do": "hud",
+              "keys": [
+                "mesh.sphere_flat",
+                "mesh.hard_surface_averaged"
+              ]
+            },
+            {
+              "at": "L1+0.4",
+              "do": "set",
+              "key": "mesh.sphere_flat",
+              "value": true
+            },
+            {
+              "at": "L2+1.0",
+              "do": "set",
+              "key": "mesh.hard_surface_averaged",
+              "value": true
+            }
+          ]
+        },
+        {
+          "id": "c1s3",
+          "label": "切线空间 TBN",
+          "preset": "④ 切线空间 TBN",
+          "camera": {
+            "target": [
+              1.2,
+              0.7,
+              0.0
+            ],
+            "yaw": 0,
+            "pitch": -40,
+            "distance": 4.8
+          },
+          "orbit": 3.0,
+          "lines": [
+            {
+              "sub": "法线贴图要在表面上再扭转法线，需要一个局部坐标系，叫切线空间。"
+            },
+            {
+              "sub": "红色是切线 T，绿色是副切线 B，蓝色是法线 N。"
+            }
+          ],
+          "actions": [
+            {
+              "at": "L1",
+              "do": "card",
+              "title": "切线空间 TBN",
+              "body": "n = T·x + B·y + N·z\nB = cross(N, T) × w"
+            }
+          ]
+        },
+        {
+          "id": "c1s4",
+          "label": "法线贴图",
+          "preset": "⑤ 法线贴图原始颜色",
+          "camera": {
+            "target": [
+              0.0,
+              2.2,
+              -3.2
+            ],
+            "yaw": 0,
+            "pitch": -9,
+            "distance": 4.3
+          },
+          "lines": [
+            {
+              "sub": "法线贴图把这个空间里的方向存成颜色，淡紫色代表不扰动。"
+            },
+            {
+              "sub": "切回正常光照，把光压低到几乎贴着墙面，凹凸感最强。"
+            },
+            {
+              "sub": "normal_strength 越大，凹凸越深。",
+              "say": "normal strength 越大，凹凸越深。"
+            }
+          ],
+          "actions": [
+            {
+              "at": "L0+0.8",
+              "do": "card",
+              "title": "法线贴图编码",
+              "body": "rgb = xyz × 0.5 + 0.5\n(0.5, 0.5, 1) = 不扰动",
+              "dur": 4.5
+            },
+            {
+              "at": "L1",
+              "do": "set",
+              "key": "view.mode",
+              "value": "Lit"
+            },
+            {
+              "at": "L1",
+              "do": "set",
+              "key": "light.azimuth",
+              "value": 70.0
+            },
+            {
+              "at": "L1",
+              "do": "set",
+              "key": "light.elevation",
+              "value": 60.0
+            },
+            {
+              "at": "L1",
+              "do": "hud",
+              "keys": [
+                "light.elevation",
+                "nm.strength"
+              ]
+            },
+            {
+              "at": "L1+0.8",
+              "do": "sweep",
+              "key": "light.elevation",
+              "to": 7.0,
+              "dur": 3.0
+            },
+            {
+              "at": "L2",
+              "do": "sweep",
+              "key": "nm.strength",
+              "to": 2.4,
+              "dur": 2.4
+            }
+          ],
+          "labels": false
+        },
+        {
+          "id": "c1s5",
+          "label": "故障：绿通道翻转",
+          "preset": "⑦ 绿通道翻转 (DirectX)",
+          "camera": {
+            "target": [
+              0.0,
+              2.2,
+              -3.2
+            ],
+            "yaw": 0,
+            "pitch": -9,
+            "distance": 4.3
+          },
+          "lines": [
+            {
+              "sub": "常见故障一：Godot 使用 OpenGL 约定，绿色朝上。",
+              "say": "常见故障一：Godot 使用 Open G L 约定，绿色朝上。",
+              "seed": 20261103
+            },
+            {
+              "sub": "DirectX 格式的贴图绿通道相反，凸起的铆钉看起来像凹坑。"
+            }
+          ],
+          "actions": [
+            {
+              "at": 0,
+              "do": "set",
+              "key": "nm.flip_green",
+              "value": false
+            },
+            {
+              "at": 0,
+              "do": "hud",
+              "keys": [
+                "nm.flip_green"
+              ]
+            },
+            {
+              "at": "L1+0.6",
+              "do": "set",
+              "key": "nm.flip_green",
+              "value": true
+            }
+          ],
+          "post": 1.0,
+          "labels": false
+        },
+        {
+          "id": "c1s6",
+          "label": "故障：错误色彩空间",
+          "preset": "",
+          "camera": {
+            "target": [
+              4.8,
+              1.05,
+              0.0
+            ],
+            "yaw": -6,
+            "pitch": -8,
+            "distance": 3.7
+          },
+          "lines": [
+            {
+              "sub": "故障二：法线贴图被当成颜色做了 sRGB 转换，表面整体偏暗、偏向一侧。",
+              "say": "故障二：法线贴图被当成颜色做了 S R G B 转换，表面整体偏暗、偏向一侧。"
+            }
+          ],
+          "actions": [
+            {
+              "at": 0,
+              "do": "hud",
+              "keys": [
+                "nm.wrong_color_space"
+              ]
+            },
+            {
+              "at": "L0+1.4",
+              "do": "set",
+              "key": "nm.wrong_color_space",
+              "value": true
+            }
+          ],
+          "post": 1.0
+        },
+        {
+          "id": "c1s7",
+          "label": "故障：缺失切线",
+          "preset": "⑨ 缺失切线",
+          "camera": {
+            "target": [
+              4.8,
+              1.05,
+              0.0
+            ],
+            "yaw": -6,
+            "pitch": -8,
+            "distance": 3.7
+          },
+          "lines": [
+            {
+              "sub": "故障三：网格缺少切线，扰动方向就全乱了。"
+            },
+            {
+              "sub": "导入模型时，记得生成 MikkTSpace 切线。",
+              "say": "导入模型时，记得生成 Mikk T Space 切线。"
+            }
+          ],
+          "actions": [
+            {
+              "at": 0,
+              "do": "set",
+              "key": "mesh.tangent_mode",
+              "value": 0
+            },
+            {
+              "at": 0,
+              "do": "hud",
+              "keys": [
+                "mesh.tangent_mode"
+              ]
+            },
+            {
+              "at": "L0+0.9",
+              "do": "set",
+              "key": "mesh.tangent_mode",
+              "value": 1
+            }
+          ],
+          "post": 1.0
+        }
+      ]
+    },
+    {
+      "id": "c2",
+      "module": 1,
+      "short": "光照模型",
+      "card": {
+        "num": "02",
+        "title": "光照模型对比",
+        "subtitle": "同样的 N·L，不同的高光"
+      },
+      "shots": [
+        {
+          "id": "c2s1",
+          "label": "五种经典模型 + PBR",
+          "preset": "",
+          "camera": {
+            "target": [
+              0.0,
+              1.1,
+              0.0
+            ],
+            "yaw": 0,
+            "pitch": -10,
+            "distance": 10.0
+          },
+          "orbit": 1.5,
+          "lines": [
+            {
+              "sub": "这一排球从左到右是 Lambert、Half-Lambert、Phong、Blinn-Phong 和卡通着色，",
+              "say": "这一排球从左到右是 Lambert，Half Lambert，Phong，Blinn Phong，和卡通着色，"
+            },
+            {
+              "sub": "最右边是 Godot 内置的 PBR，作为参照。",
+              "say": "最右边是 Godot 内置的 P B R，作为参照。"
+            }
+          ]
+        },
+        {
+          "id": "c2s2",
+          "label": "漫反射：N·L 与 Half-Lambert",
+          "preset": "③ N·L 兰伯特项",
+          "camera": "漫反射对比",
+          "lines": [
+            {
+              "sub": "先只看 N·L：正对光源为 1，侧面逐渐变暗，背面被截成 0。",
+              "say": "先只看 N 点乘 L：正对光源为一，侧面逐渐变暗，背面被截成零。"
+            },
+            {
+              "sub": "Half-Lambert 把它重新映射到 0 到 1，背光面也保留了层次。",
+              "say": "Half Lambert 把它重新映射到零到一，背光面也保留了层次。"
+            }
+          ],
+          "actions": [
+            {
+              "at": "L0",
+              "do": "card",
+              "title": "漫反射",
+              "body": "Lambert = max(N·L, 0)\nHalf-Lambert = (N·L × 0.5 + 0.5)²"
+            },
+            {
+              "at": "L1",
+              "do": "set",
+              "key": "model.term_view",
+              "value": "Diffuse"
+            },
+            {
+              "at": "L1",
+              "do": "hud",
+              "keys": [
+                "model.term_view"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "c2s3",
+          "label": "高光：Phong vs Blinn-Phong",
+          "preset": "② 只看高光",
+          "camera": "Blinn-Phong 特写",
+          "lines": [
+            {
+              "sub": "高光才是这些模型真正的区别。"
+            },
+            {
+              "sub": "Phong 比较反射向量 R 与视线 V，Blinn-Phong 比较法线 N 与半程向量 H。",
+              "say": "Phong 比较反射向量 R 与视线 V，Blinn Phong 比较法线 N 与半程向量 H。"
+            },
+            {
+              "sub": "同样的指数下，Blinn-Phong 的高光更大、更圆。",
+              "say": "同样的指数下，Blinn Phong 的高光更大、更圆。"
+            }
+          ],
+          "actions": [
+            {
+              "at": "L1",
+              "do": "card",
+              "title": "高光项",
+              "body": "Phong = pow(max(R·V, 0), n)\nBlinn-Phong = pow(max(N·H, 0), n)\nH = normalize(L + V)"
+            }
+          ]
+        },
+        {
+          "id": "c2s4",
+          "label": "N / L / V / H / R 向量",
+          "preset": "④ N·H 与向量可视化",
+          "camera": {
+            "target": [
+              1.6,
+              1.9,
+              1.0
+            ],
+            "yaw": -103,
+            "pitch": -38,
+            "distance": 3.4
+          },
+          "orbit": 2.0,
+          "lines": [
+            {
+              "sub": "看这五根箭头：N 蓝色，L 黄色，V 白色，H 品红，R 青色。",
+              "seed": 20261103
+            },
+            {
+              "sub": "H 位于 L 和 V 正中间，当 N 与 H 重合时，高光最亮。"
+            }
+          ]
+        },
+        {
+          "id": "c2s5",
+          "label": "高光指数与能量守恒",
+          "preset": "",
+          "camera": "Blinn-Phong 特写",
+          "lines": [
+            {
+              "sub": "高光指数越大，高光越小越锐利，表面显得越光滑。"
+            },
+            {
+              "sub": "再打开能量守恒，越集中的高光峰值越亮，这更接近真实。"
+            }
+          ],
+          "actions": [
+            {
+              "at": 0,
+              "do": "set",
+              "key": "model.shininess",
+              "value": 8.0
+            },
+            {
+              "at": 0,
+              "do": "hud",
+              "keys": [
+                "model.shininess",
+                "model.energy_conserving"
+              ]
+            },
+            {
+              "at": "L0+0.3",
+              "do": "sweep",
+              "key": "model.shininess",
+              "to": 512.0,
+              "dur": 3.5,
+              "curve": "exp"
+            },
+            {
+              "at": "L1+0.6",
+              "do": "set",
+              "key": "model.energy_conserving",
+              "value": true
+            }
+          ],
+          "post": 0.8
+        },
+        {
+          "id": "c2s6",
+          "label": "卡通渲染",
+          "preset": "⑧ 卡通渲染",
+          "camera": "Blinn-Phong 特写",
+          "orbit": 2.0,
+          "lines": [
+            {
+              "sub": "把 N·L 量化成两个色阶，高光用阈值硬切，",
+              "say": "把 N 点乘 L 量化成两个色阶，高光用阈值硬切，"
+            },
+            {
+              "sub": "再加一圈边缘光，就是最基础的卡通渲染。"
+            }
+          ],
+          "actions": [
+            {
+              "at": 0,
+              "do": "hud",
+              "keys": [
+                "model.toon_steps",
+                "model.rim_strength"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "c2s7",
+          "label": "PBR 球阵",
+          "preset": "⑪ PBR 球阵",
+          "camera": "PBR 球阵",
+          "lines": [
+            {
+              "sub": "PBR 只用粗糙度和金属度两个参数来描述材质。",
+              "say": "P B R 只用粗糙度和金属度两个参数来描述材质。"
+            },
+            {
+              "sub": "横向是粗糙度从 0 到 1，纵向是金属度从下到上。",
+              "say": "横向是粗糙度从零到一，纵向是金属度从下到上。"
+            },
+            {
+              "sub": "金属没有漫反射，颜色全部来自反射；越粗糙，高光越宽越暗。"
+            }
+          ],
+          "actions": [
+            {
+              "at": "L1",
+              "do": "card",
+              "title": "PBR 材质",
+              "body": "roughness 粗糙度：→ 0 … 1\nmetallic 金属度：↑ 0 … 1"
+            }
+          ],
+          "post": 0.8
+        }
+      ]
+    },
+    {
+      "id": "c3",
+      "module": 2,
+      "short": "光源与阴影",
+      "card": {
+        "num": "03",
+        "title": "光源类型与阴影",
+        "subtitle": "光从哪里来，影子怎么算"
+      },
+      "shots": [
+        {
+          "id": "c3s1",
+          "label": "平行光 Directional",
+          "preset": "",
+          "camera": "总览",
+          "orbit": 2.0,
+          "lines": [
+            {
+              "sub": "平行光模拟太阳：只有方向没有位置，所有阴影朝向一致。"
+            }
+          ]
+        },
+        {
+          "id": "c3s2",
+          "label": "点光 Omni",
+          "preset": "⑧ 点光阴影",
+          "camera": "总览",
+          "orbit": 2.0,
+          "lines": [
+            {
+              "sub": "点光从一个点向四周发光，亮度随距离衰减。"
+            }
+          ]
+        },
+        {
+          "id": "c3s3",
+          "label": "聚光 + 投影纹理",
+          "preset": "⑨ 聚光灯 + 投影纹理",
+          "camera": "薄板特写",
+          "lines": [
+            {
+              "sub": "聚光是一个光锥，还能用投影纹理投出窗框的图案。"
+            }
+          ]
+        },
+        {
+          "id": "c3s4",
+          "label": "面光源 AreaLight3D",
+          "preset": "⑩ 面光源 AreaLight3D",
+          "camera": {
+            "target": [
+              -4.6,
+              1.1,
+              0.2
+            ],
+            "yaw": 40,
+            "pitch": -12,
+            "distance": 5.2
+          },
+          "lines": [
+            {
+              "sub": "Godot 4.7 新增了面光源：光从一整块矩形发出，阴影边缘更柔和。",
+              "say": "Godot 四点七新增了面光源：光从一整块矩形发出，阴影边缘更柔和。"
+            }
+          ],
+          "post": 0.8
+        },
+        {
+          "id": "c3s5",
+          "label": "阴影贴图原理",
+          "preset": "",
+          "camera": "地面特写",
+          "lines": [
+            {
+              "sub": "实时阴影靠阴影贴图：先从光源方向渲染一张深度图，"
+            },
+            {
+              "sub": "着色时比较像素到光源的距离，更远的就在阴影里。"
+            }
+          ],
+          "actions": [
+            {
+              "at": "L0",
+              "do": "card",
+              "title": "阴影贴图 Shadow Map",
+              "body": "① 从光源视角渲染深度\n② 着色时比较深度\n    更远 → 在阴影中"
+            }
+          ]
+        },
+        {
+          "id": "c3s6",
+          "label": "阴影痤疮 Shadow Acne",
+          "preset": "① 阴影痤疮 Shadow Acne",
+          "camera": "地面特写",
+          "lines": [
+            {
+              "sub": "深度比较有精度误差。把偏移 bias 设为 0，",
+              "say": "深度比较有精度误差。把偏移 bias 设为零，"
+            },
+            {
+              "sub": "表面会和自己的阴影打架，出现条纹，这叫阴影痤疮。"
+            },
+            {
+              "sub": "慢慢加大 normal_bias，条纹就消失了。",
+              "say": "慢慢加大 normal bias，条纹就消失了。"
+            }
+          ],
+          "actions": [
+            {
+              "at": 0,
+              "do": "hud",
+              "keys": [
+                "sun.shadow_bias",
+                "sun.shadow_normal_bias"
+              ]
+            },
+            {
+              "at": "L2+0.3",
+              "do": "sweep",
+              "key": "sun.shadow_normal_bias",
+              "to": "default",
+              "dur": 2.5
+            }
+          ],
+          "post": 0.8
+        },
+        {
+          "id": "c3s7",
+          "label": "漂浮 Peter Panning",
+          "preset": "",
+          "camera": "薄板特写",
+          "lines": [
+            {
+              "sub": "但偏移过大，阴影会和物体脱开，像浮在地面上，这叫 Peter Panning。"
+            },
+            {
+              "sub": "所以偏移够用就好：先调 normal_bias，再微调 bias。",
+              "say": "所以偏移够用就好：先调 normal bias，再微调 bias。"
+            }
+          ],
+          "actions": [
+            {
+              "at": 0,
+              "do": "hud",
+              "keys": [
+                "sun.shadow_bias",
+                "sun.shadow_normal_bias"
+              ]
+            },
+            {
+              "at": "L0+0.6",
+              "do": "sweep",
+              "key": "sun.shadow_bias",
+              "to": 1.5,
+              "dur": 2.5
+            },
+            {
+              "at": "L0+0.6",
+              "do": "sweep",
+              "key": "sun.shadow_normal_bias",
+              "to": 4.0,
+              "dur": 2.5
+            }
+          ]
+        },
+        {
+          "id": "c3s8",
+          "label": "级联阴影 PSSM",
+          "preset": "③ 级联可视化 PSSM",
+          "camera": "长廊 (级联)",
+          "lines": [
+            {
+              "sub": "平行光要覆盖很远的范围，所以把视锥切成几段，每段一张阴影图。"
+            },
+            {
+              "sub": "这就是级联阴影 PSSM：近处精度高，远处精度低。",
+              "say": "这就是级联阴影 P S S M：近处精度高，远处精度低。"
+            }
+          ],
+          "actions": [
+            {
+              "at": 0,
+              "do": "set",
+              "key": "light.sun_elevation",
+              "value": 18.0
+            },
+            {
+              "at": "L1",
+              "do": "hud",
+              "keys": [
+                "sun.directional_shadow_max_distance"
+              ]
+            },
+            {
+              "at": "L1+0.4",
+              "do": "sweep",
+              "key": "sun.directional_shadow_max_distance",
+              "to": 45.0,
+              "dur": 2.5
+            }
+          ],
+          "post": 0.8
+        },
+        {
+          "id": "c3s9",
+          "label": "软阴影 PCSS",
+          "preset": "⑦ 软阴影 PCSS",
+          "camera": "薄板特写",
+          "lines": [
+            {
+              "sub": "最后是软阴影。给光源一个角直径，离遮挡物越远，阴影越模糊。"
+            },
+            {
+              "sub": "这叫接触硬化，是 PCSS 软阴影的特点。",
+              "say": "这叫接触硬化，是 P C S S 软阴影的特点。"
+            }
+          ],
+          "actions": [
+            {
+              "at": 0,
+              "do": "set",
+              "key": "sun.light_angular_distance",
+              "value": 0.0
+            },
+            {
+              "at": 0,
+              "do": "hud",
+              "keys": [
+                "sun.light_angular_distance"
+              ]
+            },
+            {
+              "at": "L0+0.8",
+              "do": "sweep",
+              "key": "sun.light_angular_distance",
+              "to": 3.0,
+              "dur": 3.0
+            }
+          ],
+          "post": 0.8
+        }
+      ]
+    },
+    {
+      "id": "c4",
+      "module": 3,
+      "short": "GI 与后处理",
+      "card": {
+        "num": "04",
+        "title": "GI、环境与后处理",
+        "subtitle": "间接光，以及从 HDR 到屏幕"
+      },
+      "shots": [
+        {
+          "id": "c4s1",
+          "label": "只有直接光",
+          "preset": "① 只有直接光",
+          "camera": "房间正面",
+          "lines": [
+            {
+              "sub": "关掉环境光和全局光照，只有阳光直接照到的地方是亮的。"
+            },
+            {
+              "sub": "现实中，光会在墙面之间反复反弹，这就是全局光照 GI。",
+              "say": "现实中，光会在墙面之间反复反弹，这就是全局光照 G I。"
+            }
+          ]
+        },
+        {
+          "id": "c4s2",
+          "label": "SDFGI 实时全局光照",
+          "preset": "② SDFGI",
+          "camera": "房间正面",
+          "lines": [
+            {
+              "sub": "打开 SDFGI，阳光照亮了整个房间，红墙和绿墙还把颜色染到了地面上。",
+              "say": "打开 S D F G I，阳光照亮了整个房间，红墙和绿墙还把颜色染到了地面上。"
+            },
+            {
+              "sub": "切到 GI Buffer 视图，就能单独查看间接光的贡献。",
+              "say": "切到 G I Buffer 视图，就能单独查看间接光的贡献。"
+            }
+          ],
+          "actions": [
+            {
+              "at": "L1+0.4",
+              "do": "debug",
+              "mode": "GI_BUFFER"
+            }
+          ],
+          "post": 0.8
+        },
+        {
+          "id": "c4s3",
+          "label": "屏幕空间效果",
+          "preset": "⑤ SSAO 环境光遮蔽",
+          "camera": "室内低角度",
+          "lines": [
+            {
+              "sub": "屏幕空间效果比较便宜：SSAO 让墙角和接触处变暗，",
+              "say": "屏幕空间效果比较便宜：S S A O 让墙角和接触处变暗，"
+            },
+            {
+              "sub": "SSR 让光滑地板映出房间，但只能反射屏幕上看得见的东西。",
+              "say": "S S R 让光滑地板映出房间，但只能反射屏幕上看得见的东西。"
+            }
+          ],
+          "actions": [
+            {
+              "at": "L1",
+              "do": "preset",
+              "name": "⑦ SSR 镜面地板"
+            }
+          ],
+          "post": 0.8
+        },
+        {
+          "id": "c4s4",
+          "label": "HDR 与色调映射",
+          "preset": "⑨ Linear 过曝",
+          "camera": "窗户光柱",
+          "lines": [
+            {
+              "sub": "光照在 HDR 中计算，亮度可以远大于 1，屏幕却只能显示 0 到 1。",
+              "say": "光照在 HDR 中计算，亮度可以远大于一，屏幕却只能显示零到一。"
+            },
+            {
+              "sub": "Linear 直接截断，窗口和发光球变成了一片死白；"
+            },
+            {
+              "sub": "换成 AgX 色调映射，高光被平滑压缩，自然地过渡到白色。",
+              "say": "换成 A G X 色调映射，高光被平滑压缩，自然地过渡到白色。"
+            }
+          ],
+          "actions": [
+            {
+              "at": "L0",
+              "do": "card",
+              "title": "色调映射 Tonemapping",
+              "body": "HDR 线性亮度 0 ~ ∞\n→ 曝光 → 曲线压缩 → 屏幕 0 ~ 1",
+              "dur": 5.0
+            },
+            {
+              "at": "L1",
+              "do": "hud",
+              "keys": [
+                "env.tonemap_mode"
+              ]
+            },
+            {
+              "at": "L2+0.3",
+              "do": "set",
+              "key": "env.tonemap_mode",
+              "value": "AgX"
+            }
+          ],
+          "post": 0.8
+        },
+        {
+          "id": "c4s5",
+          "label": "辉光 Glow",
+          "preset": "⑪ 辉光 Glow",
+          "camera": "窗户光柱",
+          "lines": [
+            {
+              "sub": "辉光主要作用于超过阈值的高亮像素，把它们模糊后叠加回去。"
+            }
+          ],
+          "actions": [
+            {
+              "at": 0,
+              "do": "hud",
+              "keys": [
+                "glow.glow_hdr_threshold",
+                "glow.glow_intensity"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "c4s6",
+          "label": "体积雾光柱",
+          "preset": "⑫ 体积雾光柱",
+          "camera": "窗户光柱",
+          "orbit": 1.5,
+          "lines": [
+            {
+              "sub": "体积雾在空间里计算光的散射，阳光穿过窗户，形成了光柱。"
+            }
+          ],
+          "actions": [
+            {
+              "at": 0,
+              "do": "hud",
+              "keys": [
+                "vfog.volumetric_fog_density",
+                "vfog.volumetric_fog_anisotropy"
+              ]
+            }
+          ],
+          "post": 1.0
+        },
+        {
+          "id": "c4s7",
+          "label": "3D LUT 调色",
+          "preset": "⑰ 调色 Teal & Orange",
+          "camera": "房间正面",
+          "lines": [
+            {
+              "sub": "调色发生在色调映射之后：这张 3D LUT 让暗部偏青、亮部偏橙。",
+              "say": "调色发生在色调映射之后：这张三维查找表让暗部偏青、亮部偏橙。"
+            }
+          ],
+          "post": 0.8
+        },
+        {
+          "id": "c4s8",
+          "label": "全开综合",
+          "preset": "⑱ 全开综合",
+          "camera": "房间正面",
+          "orbit": 1.5,
+          "lines": [
+            {
+              "sub": "效果全开以后，记得看 GPU 耗时，再逐个关闭，找出最贵的那一项。"
+            }
+          ],
+          "post": 0.8
+        }
+      ]
+    },
+    {
+      "id": "c5",
+      "module": 4,
+      "short": "氛围配方",
+      "card": {
+        "num": "05",
+        "title": "场景氛围配方",
+        "subtitle": "氛围 = 多层光照的组合"
+      },
+      "shots": [
+        {
+          "id": "c5s1",
+          "label": "配方：黄金时刻",
+          "preset": "② 黄金时刻",
+          "camera": "广场全景",
+          "orbit": 1.5,
+          "lines": [
+            {
+              "sub": "氛围不是某一个参数，而是好几层光的组合。"
+            },
+            {
+              "sub": "以黄金时刻为例：低角度的暖色主光，加上冷蓝色的天空补光。"
+            },
+            {
+              "sub": "主光决定方向和时间，补光决定暗部的颜色。"
+            }
+          ]
+        },
+        {
+          "id": "c5s2",
+          "label": "逐层拆解",
+          "camera": "广场全景",
+          "orbit": 1.0,
+          "lines": [
+            {
+              "sub": "现在一层一层关掉。先关主光，画面立刻失去了方向和时间感。"
+            },
+            {
+              "sub": "再关天空环境光，暗部直接发黑。"
+            },
+            {
+              "sub": "关掉雾和体积雾，纵深感消失；关掉后处理，画面变得平淡。"
+            },
+            {
+              "sub": "全部打开，每一层的贡献就一目了然。"
+            }
+          ],
+          "actions": [
+            {
+              "at": 0,
+              "do": "hud",
+              "keys": [
+                "layer.key",
+                "layer.sky_ambient",
+                "layer.fog",
+                "layer.volumetric",
+                "layer.post"
+              ]
+            },
+            {
+              "at": "L0+1.6",
+              "do": "set",
+              "key": "layer.key",
+              "value": false
+            },
+            {
+              "at": "L1+0.3",
+              "do": "set",
+              "key": "layer.sky_ambient",
+              "value": false
+            },
+            {
+              "at": "L2+0.2",
+              "do": "set",
+              "key": "layer.fog",
+              "value": false
+            },
+            {
+              "at": "L2+0.2",
+              "do": "set",
+              "key": "layer.volumetric",
+              "value": false
+            },
+            {
+              "at": "L2+2.6",
+              "do": "set",
+              "key": "layer.post",
+              "value": false
+            },
+            {
+              "at": "L3+0.3",
+              "do": "call",
+              "key": "layer.all_on"
+            }
+          ],
+          "post": 1.0
+        },
+        {
+          "id": "c5s3",
+          "label": "配方插值与日夜循环",
+          "camera": "广场全景",
+          "orbit": 2.0,
+          "lines": [
+            {
+              "sub": "配方之间可以插值，比如从正午平滑过渡到黄金时刻。"
+            },
+            {
+              "sub": "time_of_day 则驱动整个昼夜循环：太阳落下，路灯亮起。",
+              "say": "time of day 则驱动整个昼夜循环：太阳落下，路灯亮起。"
+            }
+          ],
+          "actions": [
+            {
+              "at": 0,
+              "do": "set",
+              "key": "recipe.a",
+              "value": "① 晴朗正午"
+            },
+            {
+              "at": 0,
+              "do": "set",
+              "key": "recipe.b",
+              "value": "② 黄金时刻"
+            },
+            {
+              "at": 0,
+              "do": "set",
+              "key": "recipe.blend",
+              "value": 0.0
+            },
+            {
+              "at": 0,
+              "do": "hud",
+              "keys": [
+                "recipe.blend"
+              ]
+            },
+            {
+              "at": "L0+0.3",
+              "do": "sweep",
+              "key": "recipe.blend",
+              "to": 1.0,
+              "dur": 3.5
+            },
+            {
+              "at": "L1",
+              "do": "set",
+              "key": "recipe.time_of_day",
+              "value": 17.5
+            },
+            {
+              "at": "L1",
+              "do": "hud",
+              "keys": [
+                "recipe.time_of_day"
+              ]
+            },
+            {
+              "at": "L1+0.2",
+              "do": "sweep",
+              "key": "recipe.time_of_day",
+              "to": 20.5,
+              "dur": 5.0
+            }
+          ],
+          "post": 1.4
+        },
+        {
+          "id": "c5s4",
+          "label": "霓虹雨夜",
+          "preset": "⑥ 霓虹雨夜",
+          "camera": "湿地面倒影",
+          "orbit": 1.0,
+          "lines": [
+            {
+              "sub": "霓虹雨夜：冷色的环境，加上饱和的霓虹灯和湿地面的反射。"
+            }
+          ],
+          "post": 0.8
+        },
+        {
+          "id": "c5s5",
+          "label": "丁达尔光",
+          "preset": "⑤ 雾林丁达尔光",
+          "camera": "藤架光柱",
+          "orbit": 1.0,
+          "lines": [
+            {
+              "sub": "丁达尔光：阳光穿过藤架的缝隙，体积雾让光束有了形状。"
+            }
+          ],
+          "post": 0.8
+        },
+        {
+          "id": "c5s6",
+          "label": "恐怖氛围",
+          "preset": "⑦ 地下室恐怖",
+          "camera": "路灯下",
+          "lines": [
+            {
+              "sub": "恐怖氛围则是做减法：信息越少越好，灯光不稳定，再压暗四周。"
+            }
+          ],
+          "post": 1.4
+        }
+      ]
+    },
+    {
+      "id": "c6",
+      "module": 2,
+      "short": "调试方法",
+      "card": {
+        "num": "06",
+        "title": "调试方法",
+        "subtitle": "先隔离，再调整"
+      },
+      "shots": [
+        {
+          "id": "c6s1",
+          "label": "调试四步",
+          "preset": "",
+          "camera": "总览",
+          "sub_top": true,
+          "lines": [
+            {
+              "sub": "最后总结调试光照的四个习惯。"
+            },
+            {
+              "sub": "第一，用 Debug View 只看一层，先确认问题出在哪里。"
+            },
+            {
+              "sub": "第二，改参数前后存 A/B 两个快照，按 Tab 来回对比。",
+              "say": "第二，改参数前后存 A B 两个快照，按 Tab 来回对比。"
+            },
+            {
+              "sub": "第三，盯住左上角的 GPU 耗时；第四，把调好的参数导出成笔记。"
+            }
+          ],
+          "actions": [
+            {
+              "at": 0,
+              "do": "ui",
+              "on": true
+            },
+            {
+              "at": "L1+0.3",
+              "do": "debug",
+              "mode": "LIGHTING"
+            },
+            {
+              "at": "L2",
+              "do": "debug",
+              "mode": "DISABLED"
+            },
+            {
+              "at": "L2+0.2",
+              "do": "snapshot",
+              "slot": "A"
+            },
+            {
+              "at": "L2+0.6",
+              "do": "set",
+              "key": "light.sun_elevation",
+              "value": 12.0
+            },
+            {
+              "at": "L2+1.0",
+              "do": "snapshot",
+              "slot": "B"
+            },
+            {
+              "at": "L2+2.0",
+              "do": "snapshot",
+              "slot": "toggle"
+            },
+            {
+              "at": "L2+2.8",
+              "do": "snapshot",
+              "slot": "toggle"
+            },
+            {
+              "at": "L2+3.6",
+              "do": "snapshot",
+              "slot": "toggle"
+            },
+            {
+              "at": "L2+4.4",
+              "do": "snapshot",
+              "slot": "toggle"
+            },
+            {
+              "at": "L3+1.0",
+              "do": "export"
+            }
+          ],
+          "post": 0.8
+        },
+        {
+          "id": "c6s2",
+          "label": "",
+          "preset": "⑫ 夜景多光源",
+          "camera": "总览",
+          "orbit": 3.0,
+          "lines": [
+            {
+              "sub": "所有参数、预设和文档都在项目里，打开就能自己动手试。"
+            },
+            {
+              "sub": "感谢观看。"
+            }
+          ],
+          "actions": [
+            {
+              "at": 0,
+              "do": "ui",
+              "on": false
+            },
+            {
+              "at": "L0",
+              "do": "endcard"
+            }
+          ],
+          "post": 3.0
+        }
+      ]
+    }
+  ]
+}

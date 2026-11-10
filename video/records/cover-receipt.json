@@ -1,0 +1,46 @@
+[
+  {
+    "file": "cover-16x9.png",
+    "jpg": "cover-16x9.jpg",
+    "size": [
+      1920,
+      1080
+    ],
+    "png_bytes": 1032087,
+    "jpg_bytes": 473824,
+    "source": "clean Godot captures (tutorial_director --stills --clean)",
+    "shots": [
+      "c1s1",
+      "c2s4",
+      "c3s3",
+      "c4s2",
+      "c5s4",
+      "c5s5"
+    ],
+    "font": "zlabs-pixel-12px-m-cn.ttf",
+    "font_sha256": "c4bf6069b8e5e31dc42c81f310afbc322c2cbc843ceba6c871358f9f1aaae033",
+    "glyphs_checked": 77
+  },
+  {
+    "file": "cover-4x3.png",
+    "jpg": "cover-4x3.jpg",
+    "size": [
+      1600,
+      1200
+    ],
+    "png_bytes": 988415,
+    "jpg_bytes": 470577,
+    "source": "clean Godot captures (tutorial_director --stills --clean)",
+    "shots": [
+      "c1s1",
+      "c2s4",
+      "c3s3",
+      "c4s2",
+      "c5s4",
+      "c5s5"
+    ],
+    "font": "zlabs-pixel-12px-m-cn.ttf",
+    "font_sha256": "c4bf6069b8e5e31dc42c81f310afbc322c2cbc843ceba6c871358f9f1aaae033",
+    "glyphs_checked": 77
+  }
+]
